@@ -68,7 +68,7 @@ export default {
       const { nome, email, cargo, nascimento, cpf, senha, telefone, endereco } =
         request.body;
 
-      if (!nome && !email && !cargo && !cpf && !senha) {
+      if (!nome || !email || !cargo || !cpf || !senha) {
         return response.status(400).json("Dados do funcionario incompletos");
       }
 
